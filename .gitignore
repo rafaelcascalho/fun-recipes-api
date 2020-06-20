@@ -1,0 +1,15 @@
+# modules
+node_modules/
+
+# dist
+dist/
+
+# .env files
+.env.test
+.env.development
+
+# personal notes
+notes.txt
+
+# VSCode folder
+.vscode
