@@ -1,0 +1,41 @@
+{
+  "name": "fun-recipes-api",
+  "version": "1.0.0",
+  "description": "An API to search for recipes with gifs using at max 3 ingredients",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "./node_modules/.bin/ts-node-dev src/server.ts",
+    "start": "node server.js",
+    "build": "./node_modules/.bin/tsc -p ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Recipes",
+    "Ingredients",
+    "Gifs",
+    "Challenge",
+    "Delivery Much"
+  ],
+  "author": "Rafael Cascalho",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^7.3.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5"
+  }
+}
