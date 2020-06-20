@@ -13,3 +13,6 @@ notes.txt
 
 # VSCode folder
 .vscode
+
+# lock file
+package-lock.json
