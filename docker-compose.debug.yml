@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  recipes-api:
+    image: recipes-api
+    build: .
+    env_file:
+      - .env.development
+    ports:
+      - 4223:4223
+      - 9229:9229
+    command: ./node_modules/.bin/ts-node-dev --inspect=0.0.0.0:9229 src/server.ts
