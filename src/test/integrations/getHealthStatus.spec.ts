@@ -3,7 +3,7 @@ import request from "supertest";
 import { healthExpectation } from "../helper";
 
 describe("Given the API is running", () => {
-  describe.only("when only the API is UP", () => {
+  describe("when only the API is UP", () => {
     test("then it returns up just for the API", async () => {
       const expectedHealth = healthExpectation("UP", "DOWN", "DOWN");
 
