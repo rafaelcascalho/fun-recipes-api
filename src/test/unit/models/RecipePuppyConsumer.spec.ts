@@ -10,15 +10,15 @@ import rawRecipes from "../../fixtures/rawRecipes.json";
 import nock from "nock";
 
 describe("RecipePuppyConsumer", () => {
+  const ingredients = ["garlic", "onions"];
+
   describe("when success", () => {
     nock(RECIPE_PUPPY_API_URL)
       .get("/?&i=garlic,onions")
       .reply(STATUS_OK, rawRecipes);
 
     test("returns a list of recipes", async () => {
-      const ingredients = ["garlic", "onions"];
-      const url = "http://www.recipepuppy.com/api/?";
-      const recipesConsumer = new RecipePuppyConsumer(consumeApi, url);
+      const recipesConsumer = new RecipePuppyConsumer(consumeApi);
 
       const recipes = await recipesConsumer.recipes(ingredients);
 
@@ -34,9 +34,7 @@ describe("RecipePuppyConsumer", () => {
       .reply(STATUS_SERVER_ERROR, []);
 
     test("returns a list of recipes", async () => {
-      const ingredients = ["garlic", "onions"];
-      const url = "http://www.recipepuppy.com/api/?";
-      const recipesConsumer = new RecipePuppyConsumer(consumeApi, url);
+      const recipesConsumer = new RecipePuppyConsumer(consumeApi);
 
       const recipes = await recipesConsumer.recipes(ingredients);
 
