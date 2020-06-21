@@ -1,23 +1,22 @@
-import Consumer from "./Consumer";
 import { Recipe } from "../types";
 
 class RecipePuppyConsumer {
   private url: string;
-  private api: Consumer;
+  private request: Function;
 
-  constructor() {
-    this.api = new Consumer();
-    this.url = "http://www.recipepuppy.com/api/?";
+  constructor(consumer: Function, url: string) {
+    this.request = consumer;
+    this.url = url;
   }
 
   async recipes(ingredients: Array<string>) {
     const queryfields = this.queryFields(ingredients);
     try {
-      const response = await this.api.request(this.url, queryfields);
-      const recipes = response.results.map(this.presentRecipe);
+      const response = await this.request(this.url, queryfields);
+      const recipes = response.data.results.map(this.presentRecipe);
       return recipes;
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
     }
     return [];
   }
