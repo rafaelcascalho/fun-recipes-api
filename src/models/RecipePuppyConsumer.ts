@@ -1,12 +1,13 @@
+import { RECIPE_PUPPY_API_URL } from "../config/constants";
 import { Recipe } from "../types";
 
 class RecipePuppyConsumer {
   private url: string;
   private request: Function;
 
-  constructor(consumer: Function, url: string) {
+  constructor(consumer: Function) {
     this.request = consumer;
-    this.url = url;
+    this.url = RECIPE_PUPPY_API_URL;
   }
 
   async recipes(ingredients: Array<string>) {
