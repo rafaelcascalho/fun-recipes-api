@@ -30,7 +30,7 @@ class RecipePuppyConsumer {
   private presentRecipe({ title, href, ingredients }: Recipe) {
     return {
       title,
-      ingredients,
+      ingredients: ingredients.split(", ").sort(),
       link: href,
     };
   }

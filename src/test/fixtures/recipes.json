@@ -1,52 +1,52 @@
 [
   {
     "title": "Roasted Garlic Grilling Sauce \r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\r\n\r\n",
-    "ingredients": "garlic, onions, hot sauce",
+    "ingredients": ["garlic", "hot sauce", "onions"],
     "link": "http://www.kraftfoods.com/kf/recipes/roasted-garlic-grilling-sauce-56344.aspx"
   },
   {
     "title": "Steamed Mussels I",
-    "ingredients": "garlic, mussels, onions",
+    "ingredients": ["garlic", "mussels", "onions"],
     "link": "http://allrecipes.com/Recipe/Steamed-Mussels-I/Detail.aspx"
   },
   {
     "title": "Braised Beef and Onions",
-    "ingredients": "allspice, garlic, onions",
+    "ingredients": ["allspice", "garlic", "onions"],
     "link": "http://www.epicurious.com/recipes/food/views/Braised-Beef-and-Onions-232969"
   },
   {
     "title": "Dashi Basic Korean Kelp Stock Recipe",
-    "ingredients": "anchovies, garlic, onions",
+    "ingredients": ["anchovies", "garlic", "onions"],
     "link": "http://www.grouprecipes.com/508/dashi-basic-korean-kelp-stock.html"
   },
   {
     "title": "Oven-Saut&#233;ed Onions and Garlic",
-    "ingredients": "onions, garlic, olive oil",
+    "ingredients": ["garlic", "olive oil", "onions"],
     "link": "http://find.myrecipes.com/recipes/recipefinder.dyn?action=displayRecipe&recipe_id=1860015"
   },
   {
     "title": "Three-in-One Meals Meaty Tomato Sauce",
-    "ingredients": "ground beef, onions, garlic",
+    "ingredients": ["garlic", "ground beef", "onions"],
     "link": "http://find.myrecipes.com/recipes/recipefinder.dyn?action=displayRecipe&recipe_id=1857779"
   },
   {
     "title": "\nPerfect Roast Chicken Recipe\n\n",
-    "ingredients": "onions, garlic, salt",
+    "ingredients": ["garlic", "onions", "salt"],
     "link": "http://cookeatshare.com/recipes/perfect-roast-chicken-41630"
   },
   {
     "title": "\nMexican Rice Recipe\n\n",
-    "ingredients": "onions, garlic, crisco",
+    "ingredients": ["crisco", "garlic", "onions"],
     "link": "http://cookeatshare.com/recipes/mexican-rice-47559"
   },
   {
     "title": "\nCreamed Zucchini Recipe\n\n",
-    "ingredients": "zucchini, onions, garlic",
+    "ingredients": ["garlic", "onions", "zucchini"],
     "link": "http://cookeatshare.com/recipes/creamed-zucchini-60366"
   },
   {
     "title": "\nChile Con Queso (Spicy Cheese Dip) Recipe\n\n",
-    "ingredients": "salsa, onions, garlic",
+    "ingredients": ["garlic", "onions", "salsa"],
     "link": "http://cookeatshare.com/recipes/chile-con-queso-spicy-cheese-dip-2037"
   }
 ]
