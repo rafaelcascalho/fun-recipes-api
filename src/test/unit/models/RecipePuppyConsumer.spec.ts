@@ -13,6 +13,7 @@ describe("RecipePuppyConsumer", () => {
   const ingredients = ["garlic", "onions"];
 
   describe("when success", () => {
+    const expectedNumberOfRecipes = 10;
     nock(RECIPE_PUPPY_API_URL)
       .get("/?&i=garlic,onions")
       .reply(STATUS_OK, rawRecipes);
@@ -23,12 +24,14 @@ describe("RecipePuppyConsumer", () => {
       const recipes = await recipesConsumer.recipes(ingredients);
 
       expect(recipes).toBeInstanceOf(Array);
-      expect(recipes.length).toEqual(10);
+      expect(recipes.length).toEqual(expectedNumberOfRecipes);
       expect(recipes).toMatchObject(expectedRecipes);
     });
   });
 
   describe("when fail", () => {
+    const expectedNumberOfRecipes = 0;
+    const expectedRecipes: Array<object> = [];
     nock(RECIPE_PUPPY_API_URL)
       .get("/?&i=garlic,onions")
       .reply(STATUS_SERVER_ERROR, []);
@@ -39,8 +42,8 @@ describe("RecipePuppyConsumer", () => {
       const recipes = await recipesConsumer.recipes(ingredients);
 
       expect(recipes).toBeInstanceOf(Array);
-      expect(recipes.length).toEqual(0);
-      expect(recipes).toMatchObject([]);
+      expect(recipes.length).toEqual(expectedNumberOfRecipes);
+      expect(recipes).toMatchObject(expectedRecipes);
     });
   });
 });
