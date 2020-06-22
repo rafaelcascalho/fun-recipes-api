@@ -8,14 +8,13 @@ import {
 import nock from "nock";
 
 describe("checkApisHealth", () => {
-  const statusUp = { status: "UP" };
   const serverErrorMessage = "Server Internal Error";
 
   describe("when only the RecipePuppy service is Down", () => {
+    nock(GIPHY_API_URL).get("/").reply(STATUS_OK, "");
     nock(RECIPE_PUPPY_API_URL)
       .get("/")
       .reply(STATUS_SERVER_ERROR, serverErrorMessage);
-    nock(GIPHY_API_URL).get("/").reply(STATUS_OK, statusUp);
 
     test("then it returns DOWN", async () => {
       const expectedOffline = ["Recipe Puppy API"];
@@ -28,7 +27,7 @@ describe("checkApisHealth", () => {
 
   describe("when only the Giphy service is Down", () => {
     nock(GIPHY_API_URL).get("/").reply(STATUS_SERVER_ERROR, serverErrorMessage);
-    nock(RECIPE_PUPPY_API_URL).get("/").reply(STATUS_OK, statusUp);
+    nock(RECIPE_PUPPY_API_URL).get("/").reply(STATUS_OK, []);
 
     test("then it returns the giphy service", async () => {
       const expectedOffline = ["Giphy API"];
@@ -40,10 +39,10 @@ describe("checkApisHealth", () => {
   });
 
   describe("when all the services are Down", () => {
+    nock(GIPHY_API_URL).get("/").reply(STATUS_SERVER_ERROR, serverErrorMessage);
     nock(RECIPE_PUPPY_API_URL)
       .get("/")
       .reply(STATUS_SERVER_ERROR, serverErrorMessage);
-    nock(GIPHY_API_URL).get("/").reply(STATUS_SERVER_ERROR, serverErrorMessage);
 
     test("then it returns a list with both services", async () => {
       const expectedOffline = ["Recipe Puppy API", "Giphy API"];
@@ -55,13 +54,15 @@ describe("checkApisHealth", () => {
   });
 
   describe("when all the services are Up", () => {
-    nock(GIPHY_API_URL).get("/").reply(STATUS_OK, statusUp);
-    nock(RECIPE_PUPPY_API_URL).get("/").reply(STATUS_OK, statusUp);
+    nock(GIPHY_API_URL).get("/").reply(STATUS_OK, "");
+    nock(RECIPE_PUPPY_API_URL).get("/").reply(STATUS_OK, []);
 
     test("then it returns an empty list", async () => {
+      const expectedOffline: Array<string> = [];
+
       const status = await checkApisHealth();
 
-      expect(status).toMatchObject([]);
+      expect(status).toMatchObject(expectedOffline);
     });
   });
 });
