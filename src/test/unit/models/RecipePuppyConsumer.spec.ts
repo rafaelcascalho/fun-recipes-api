@@ -1,12 +1,12 @@
 import {
   RECIPE_PUPPY_API_URL,
-  STATUS_OK,
   STATUS_SERVER_ERROR,
+  STATUS_OK,
 } from "../../../config/constants";
 import consumeApi from "../../../services/consumeApi";
 import RecipePuppyConsumer from "../../../models/RecipePuppyConsumer";
-import expectedRecipes from "../../fixtures/recipes.json";
-import rawRecipes from "../../fixtures/rawRecipes.json";
+import expectedRecipes from "../../fixtures/recipes/recipes.json";
+import rawRecipes from "../../fixtures/recipes/rawRecipes.json";
 import nock from "nock";
 
 describe("RecipePuppyConsumer", () => {
