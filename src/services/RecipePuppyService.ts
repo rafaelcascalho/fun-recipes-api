@@ -2,7 +2,7 @@ import { RECIPE_PUPPY_API_URL } from "../config/constants";
 import Recipe from "../models/Recipe";
 import { RawRecipe } from "../types";
 
-class RecipePuppyConsumer {
+class RecipePuppyService {
   private url: string;
   private request: Function;
 
@@ -36,4 +36,4 @@ class RecipePuppyConsumer {
   }
 }
 
-export default RecipePuppyConsumer;
+export default RecipePuppyService;

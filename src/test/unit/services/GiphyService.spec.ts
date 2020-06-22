@@ -5,11 +5,11 @@ import {
   GIPHY_API_KEY,
 } from "../../../config/constants";
 import consumeApi from "../../../services/consumeApi";
-import GiphyConsumer from "../../../services/GiphyConsumer";
+import GiphyService from "../../../services/GiphyService";
 import omeletResponse from "../../fixtures/gifs/omeletResponse.json";
 import nock from "nock";
 
-describe("GiphyConsumer", () => {
+describe("GiphyService", () => {
   const recipe = "omelet";
   const endpoint = `/search?api_key=${GIPHY_API_KEY}&q=${recipe}&limit=1&offset=0&rating=G&lang=pt`;
 
@@ -17,7 +17,7 @@ describe("GiphyConsumer", () => {
     nock(GIPHY_API_URL).get(endpoint).reply(STATUS_OK, omeletResponse);
 
     test("then it returns the gif url", async () => {
-      const giphy = new GiphyConsumer(consumeApi);
+      const giphy = new GiphyService(consumeApi);
 
       const gifUrl = await giphy.gif(recipe);
 
@@ -32,7 +32,7 @@ describe("GiphyConsumer", () => {
       .reply(STATUS_SERVER_ERROR, "Server Internal Error");
 
     test("then it throws an error", async () => {
-      const giphy = new GiphyConsumer(consumeApi);
+      const giphy = new GiphyService(consumeApi);
 
       await expect(giphy.gif(recipe)).rejects.toThrow();
     });
