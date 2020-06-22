@@ -28,8 +28,9 @@ class RecipePuppyConsumer {
     return { i: ingredientsStr };
   }
 
-  private create(recpieData: RawRecipe) {
-    const { title, href, ingredients } = recpieData;
+  private create(rawRecipe: RawRecipe) {
+    let { title, href, ingredients } = rawRecipe;
+    title = title.trim();
     const link = href;
     const ingredientsList = ingredients.split(", ");
     return new Recipe(title, link, ingredientsList);
