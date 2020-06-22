@@ -5,8 +5,8 @@ import {
   STATUS_SERVER_ERROR,
   STATUS_OK,
 } from "../../../config/constants";
-import GiphyConsumer from "../../../services/GiphyConsumer";
-import RecipePuppyConsumer from "../../../services/RecipePuppyConsumer";
+import GiphyService from "../../../services/GiphyService";
+import RecipePuppyService from "../../../services/RecipePuppyService";
 import RecipeService from "../../../services/RecipeService";
 import consumeApi from "../../../services/consumeApi";
 import rawRecipes from "../../fixtures/recipes/rawRecipes.json";
@@ -18,8 +18,8 @@ describe("RecipeService", () => {
   const noRecipes: Array<object> = [];
   const endpoint = "/?&i=garlic,onions";
   const ingredients = ["garlic", "onions"];
-  const giphyConsumer = new GiphyConsumer(consumeApi);
-  const recipePuppyConsumer = new RecipePuppyConsumer(consumeApi);
+  const giphyConsumer = new GiphyService(consumeApi);
+  const recipePuppyConsumer = new RecipePuppyService(consumeApi);
   const recipeService = new RecipeService(giphyConsumer, recipePuppyConsumer);
 
   describe("when one or both external services are down", () => {
