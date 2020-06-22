@@ -1,12 +1,12 @@
-import GiphyConsumer from "./GiphyConsumer";
-import RecipePuppyConsumer from "./RecipePuppyConsumer";
+import GiphyService from "./GiphyService";
+import RecipePuppyService from "./RecipePuppyService";
 import Recipe from "../models/Recipe";
 
 class RecipeService {
-  private giphy: GiphyConsumer;
-  private recipePuppy: RecipePuppyConsumer;
+  private giphy: GiphyService;
+  private recipePuppy: RecipePuppyService;
 
-  constructor(giphy: GiphyConsumer, recipePuppy: RecipePuppyConsumer) {
+  constructor(giphy: GiphyService, recipePuppy: RecipePuppyService) {
     this.giphy = giphy;
     this.recipePuppy = recipePuppy;
   }
