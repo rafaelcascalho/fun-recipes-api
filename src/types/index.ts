@@ -1,6 +1,6 @@
 type Field = string;
 
-export type Recipe = {
+export type RawRecipe = {
   title: Field;
   href: Field;
   ingredients: Field;
