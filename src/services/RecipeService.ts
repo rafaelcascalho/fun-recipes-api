@@ -13,6 +13,11 @@ class RecipeService {
 
   async find(ingredients: Array<string>) {
     let recipes = await this.recipePuppy.recipes(ingredients);
+    const noRecipes = recipes.length === 0;
+    if (noRecipes) {
+      return [];
+    }
+
     recipes = await Promise.all(recipes.map(this.addGifUrl, this));
     return recipes;
   }
