@@ -20,8 +20,6 @@ class GiphyService {
       return "";
     }
 
-    console.log(response.data.data[0].images.original);
-
     return response.data.data[0].images.original.url;
   }
 
