@@ -23,8 +23,11 @@ class RecipePuppyService {
   }
 
   private queryFields(ingredients: Array<string>) {
-    const ingredientsStr = ingredients.join();
-    return { i: ingredientsStr };
+    if (!ingredients) {
+      return { i: "" };
+    }
+
+    return { i: ingredients.join() };
   }
 
   private create(rawRecipe: RawRecipe) {

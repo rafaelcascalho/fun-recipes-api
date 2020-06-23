@@ -14,12 +14,15 @@ class GiphyService {
   async gif(recipeName: string) {
     const queryfields = this.queryFields(recipeName);
     const response = await this.request(this.url, queryfields);
-    const image = response.data.data[0].images.original;
-    if (!image) {
+
+    const gifNotFound = response.data.pagination.total_count === 0;
+    if (gifNotFound) {
       return "";
     }
 
-    return image.url;
+    console.log(response.data.data[0].images.original);
+
+    return response.data.data[0].images.original.url;
   }
 
   private queryFields(recipeName: string) {
