@@ -28,6 +28,18 @@ $ git clone git@github.com:rafaelcascalho/fun-recipes-api.git
 $ cd fun-recipes-api/
 ```
 
+You must copy the `.env.example` into a new file called `.env.development` and place the required
+information.
+Once thats done, your `.env.development` file should look like this:
+
+```
+NODE_ENV=development
+PORT=3000
+HOST=localhost
+
+GIPHY_API_KEY=your_giphy_api_key_here
+```
+
 After that's done, you can just check if your `development` environment is running using the command
 
 ```
@@ -39,6 +51,14 @@ $ sh run.sh
 ```
 
 That's it! You're all set. :clinking_beer_mugs:
+
+### To consume the API
+
+
+I've added an api base url to the requests. So, the requests must match
+```
+
+```
 
 ## :test_tube: Running the tests :test_tube:
 
