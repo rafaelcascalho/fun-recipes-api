@@ -9,3 +9,4 @@ services:
       - .env.development
     ports:
       - 4223:4223
+    network_mode: host
